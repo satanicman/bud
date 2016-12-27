@@ -1,0 +1,215 @@
+//@import "../../bower_components/slick-carousel/slick/slick.scss";
+//@import "../../bower_components/slick-carousel/slick/slick-theme.scss";
+@import "partials/variables";
+@import "partials/mixins";
+
+.top_slider {
+	@media (max-width: $screen-sm-max) {
+		display: none;
+	}
+	#slick-wrap {
+		.slick-dots {
+			bottom: 15% !important;
+			li {
+				width: $dotsWidth !important;
+				height: $dotsHeight !important;
+				margin: 0 4px !important;
+				button {
+					width: $dotsWidth !important;
+					height: $dotsHeight !important;
+					border: none !important;
+					background: none !important;
+					overflow: hidden;
+					&:before {
+						content: '';
+						display: block;
+						width: $dotsWidth !important;
+						height: $dotsHeight !important;
+						border: 1px solid $bdLight !important;
+						background: $bdLight !important;
+						border-radius: 50% !important;
+						opacity: 1 !important;
+						transition: all .3s !important;
+					}
+				}
+			}
+			.slick-active {
+				button {
+					&:before {
+						opacity: 1 !important;
+						background: none !important;
+					}
+				}
+			}
+		}
+		.slick-dotted.slick-slider {
+			margin: 0;
+		}
+	}
+}
+.under_slider {
+	background: url(../img/under_slider.jpg) 0 no-repeat;
+	background-size: cover;
+	padding: 90px 20px 50px 20px;
+	@media (min-width: $screen-md) {
+		display: flex;
+	}
+	@media (max-width: $screen-md - 1) {
+		padding: 50px 15px;
+	}
+	.under_slider_article {
+		padding: 0 30px;
+		@media (min-width: $screen-md) {
+			display: flex;
+		}
+        @media (max-width: $screen-md - 1) {
+			padding: 0;
+			float: none;
+            max-width: $container-sm;
+            margin: 0 auto 50px;
+        }
+	}
+	.under_slider_article_img {
+		width: 100%;
+	}
+	.under_slider_article_content {
+		min-height: 277px;
+		background: $bgLightGray;
+		border-radius: 6px;
+		border: 10px solid $bdOrange;		
+	}
+	.under_slider_article_text {
+		padding: 15px;
+	}
+	.under_slider_article_title {
+		color: $fontColorDark;
+		font-family: "OpenSans_Bold";
+		font-size: em(18px);
+		font-weight: 700;
+		position: relative;
+		margin: 0;
+		padding: 0 0 10px;
+		&:after {
+			content: '';
+			display: block;
+			width: 34%;
+			height: 4px;
+			background-color: $bgOrange;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+	}
+}
+.news {
+	&_list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+	}
+	img {
+		width: 100%;
+	}
+	&_item {
+		border-radius: 6px;
+		display: flex;
+		flex-direction: column;
+		&.large {
+			.news_item_content {
+				background: none;
+			}
+		}
+		&_content {
+			background-color: #e8e8e8;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		&_text {
+			padding: 15px;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		&_title {
+			flex-grow: 1;
+			padding: 0;
+			margin: 0;
+			color: $fontColorNewsLight;
+			font-family: "NotoSans_Bold";
+			font-size: em(23px);
+			font-weight: 700;
+			line-height: em(29px, 23px);
+			margin-bottom: 25px;
+		}
+		&_link {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			color: $fontColorOrange;
+			font-size: em(18px);
+			font-weight: 400;
+			line-height: 1;
+			.icon {
+				margin-left: 10px;
+			}
+		}
+		&.white {}
+		&.news_link {
+			position: relative;
+			.news_item_content {
+				background: none;
+			}
+			.news_item_text {
+				background: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+				padding: 30px;
+			}
+			.news_item_title {
+				color: $fontColorLight;
+				font-size: em(60px);
+				font-weight: 700;
+			}
+			.news_item_link {
+				color: $fontColorLight;
+				justify-content: flex-start;
+			}
+		}
+	}
+}
+.request {
+	background: url(../img/before_footer_bg.jpg) 50% 100% no-repeat;
+    background-size: contain;
+    text-align: center;
+	&_btn {
+		font-size: em(60px);
+		padding: 7px 48px;
+		margin: 120px 0 65px;
+	}
+	&_text {
+		color: $fontColorDark;
+		font-family: "PFDinTextPro_Regular";
+		font-size: em(24px);
+		font-weight: 400;
+		line-height: 1;
+		margin-bottom: 0;
+	}
+	&_label {
+		display: inline-block;
+		width: 300px;
+		height: 300px;
+		background: url(../img/btn_bg.jpg) 0 no-repeat;
+		border-radius: 50%;
+		position: relative;
+		margin: 35px 0 105px;
+		.icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -80px;
+			margin-top: -115px;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+// font
+$fontMain: "OpenSans_Regular";
+$fontBoldDefault: "PFDinTextPro_Bold";
+$fontExtraBold: "OpenSans_ExtraBold";
+$fontBold: "OpenSans_Bold";
+$fontSize: 16px;
+$fontColorDark: #303030;
+$fontColorLight: #ffffff;
+$fontColorOrange: #e16100;
+$fontColorOrangeLight: #e07c1d;
+$fontColorDarkGrey: #666666;
+$fontColorNewsDark: #000000;
+$fontColorNewsLight: #1b1b1b;
+$fontColorError: #c63;
+$fontColorBlue: #5894d4;
+// background
+$bgDark: #25282b;
+$bgMain: #ffffff;
+$bgLightGray: #f7f8f9;
+$bgGrey: #ededed;
+$bgOrange: #ff7f01;
+$bgBlue: #3188cf;
+// border
+$bdLight: #f7f8f9;
+$bdExtraLight: #ffffff;
+$bdDark: #000000;
+$bdOrange: $bgOrange;
+$bdDarkGrey: #666666;
+$bdDarkOrange: $fontColorError;
+
+
+// slick
+$dotsWidth: 17px;
+$dotsHeight: 17px;
+
+$mobile-width: $grid-float-breakpoint;

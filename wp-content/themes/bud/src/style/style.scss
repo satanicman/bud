@@ -1,0 +1,441 @@
+/*!
+Theme Name: Bud
+Theme URI: https://vk.com/id24260100/
+Author: freeman
+Author URI: https://vk.com/id24260100/
+Description: Theme for company budsistema
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black
+Text Domain: bud
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+* Third Party
+*/
+@import "../../bower_components/pg-css-reset/dist/pg-reset.css";
+@import "../../bower_components/normalize.css/normalize.css";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+//@import "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
+//@import "../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
+
+/*
+* Custom
+*/
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/icons";
+@import "partials/fonts";
+
+body {
+	font-family: $fontMain;
+	font-size: $fontSize;
+	color: $fontColorDark;
+	min-width: 400px;
+	@media (min-width: $screen-sm) and (max-width: $screen-lg - 1) {
+		font-size: 13px;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $fontColorDark;
+}
+
+.main_title {
+	color: $fontColorDark;
+	font-family: $fontBoldDefault;
+	font-size: em(60px);
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	margin: 65px 0 35px;
+	padding: 0;
+}
+#scroller {
+	position: fixed;
+	right: 20px;
+	bottom: 50px;
+}
+//form
+.btn {
+	@media (max-width: $screen-sm-max) {
+		white-space: normal;
+	}
+	&-default {
+		background: $bgOrange url(img/btn_bg.jpg) 0 -15px no-repeat;
+		border: 3px solid $bdExtraLight;
+		border-radius: 4px;
+		box-shadow: 0 4px 4px #666, inset 0 0 0 rgba(255, 255, 255, 0.5);
+		color: $fontColorLight;
+		font-family: "PFDinTextPro_Bold";
+		font-size: em(19px);
+		font-weight: 700;
+		line-height: 1;
+		text-shadow: none;
+		padding: 7px 33px;
+		&:hover,
+		&:active,
+		&:active:hover,
+		&:focus {
+			box-shadow: 0 4px 4px #666, inset 0 0 0 rgba(255, 255, 255, 0.5);
+			background: $bgOrange url(img/btn_bg.jpg) 0 -15px no-repeat;
+			border-color: $bdExtraLight;
+			color: $fontColorLight;
+		}
+	}
+	&-small {
+		border: none;
+		background-color: $bgOrange;
+		border-radius: 3px;
+		line-height: 1;
+		padding: 12px 33px;
+		color: $fontColorLight;
+		font-family: "NotoSans_Regular";
+		&:hover,
+		&:active,
+		&:focus {
+			color: $fontColorDark;
+		}
+	}
+	&-send {
+		background: none;
+		border: 2px solid #3188cf;
+		color: $fontColorOrangeLight;
+		font-family: $fontBold;
+		font-size: em(14px);
+		font-weight: 700;
+		line-height: 1;
+		padding: 13px 27px;
+		text-transform: uppercase;
+		border-radius: 0;
+	}
+	&-large {
+		width: 100%;
+		padding: 10px;
+	}
+}
+.form-control {
+	width: 100%;
+	height: 42px;
+	background-color: #f9fafb;
+	border: 1px solid #d4d8dc;
+}
+textarea.form-control {
+	height: 192px;
+	resize: none;
+}
+.form-group {
+	margin-bottom: 25px;
+	&.required {
+		.label {
+			&:after {
+				content: '*';
+				color: $fontColorError;
+				display: inline-block;
+				padding-left: 5px;
+			}
+		}
+	}
+}
+.label {
+	font-family: $fontBold;
+	font-size: em(14px);
+	font-weight: 700;
+	line-height: 1;
+	text-transform: uppercase;
+	color: $fontColorDark;
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 0;
+}
+//form #END
+// header
+.backColl {
+	display: flex;
+	align-items: center;
+	padding: 0;
+	@media (max-width: $screen-md - 1) {
+		justify-content: center;
+	}
+	.icon {
+		flex-shrink: 0;
+		margin-right: 15px;
+	}
+}
+.header_phones {
+	padding-left: 35px;
+	&_table {
+		max-width: 100%;
+		@media (max-width: $screen-md - 1) {
+			margin: 0 auto;
+		}
+	}
+	color: $fontColorDark;
+	font-size: em(18px);
+	font-weight: 400;
+	line-height: em(21px, 18px);
+	.bold {
+		font-family: $fontExtraBold;
+		padding-right: 20px;
+		text-align: right;
+	}
+}
+#header  {
+	border-top: 4px solid $bdExtraLight;
+	background: url(img/header_bg.jpg) 0 no-repeat;
+	background-size: cover;
+	.container {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		@media (max-width: $screen-md - 1) {
+			text-align: center;
+			table {
+				margin: 0 auto;
+			}
+			.row > * {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}
+.header_logo {
+	@media (max-width: $screen-sm-max) {
+		display: none;
+	}
+}
+// header #END
+// horisontal_menu
+.horisontal_menu {
+	background-color: $bgOrange;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.75;
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+		z-index: 1;
+	}
+	.icon-bar {
+		background-color: rgba($bdDark, .5);
+	}
+	.navbar-brand {
+		height: auto;
+		padding: 5px 15px;
+		@media (min-width: $mobile-width) {
+			display: none;
+		}
+	}
+	.container {
+		z-index: 2;
+	}
+	.menu {
+		margin: 0;
+		@media (min-width: $mobile-width) {
+			display: flex;
+			min-height: 60px;
+			float: none;
+		}
+		li {
+			text-align: center;
+			padding: 6px;
+			align-items: center;
+			justify-content: center;
+			transition: all .3s;
+			@media (min-width: $mobile-width) {
+				display: flex;
+				flex-basis: 14.3%;
+				flex-grow: 1;
+				border-style: solid;
+				border-color: rgba($bdDark, .5);
+				border-left-width: 1px;
+			}
+			&:last-of-type {
+				border-right-width: 1px;
+			}
+			&.current-menu-item,
+			&:hover {
+				background-color: rgba($bdDark, .5);
+			}
+		}
+		a {
+			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4), 0 0 14.6px rgba(255, 255, 255, 0.2);
+			color: $fontColorLight;
+			font-family: "ReformaGrotesk_Bold";
+			font-size: em(24px);
+			line-height: 1;
+			letter-spacing: 2px;
+			font-weight: 400;
+			text-transform: uppercase;
+			text-decoration: none;
+			padding: 0;
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: none;
+				background: none;
+			}
+		}
+	}
+
+}
+// horisontal_menu #END
+// footer
+#footer {
+	background: $bgDark url(img/footer_bg.jpg) 0 no-repeat;
+	background-size: cover;
+	color: $fontColorLight;
+	font-size: em(15px);
+	font-weight: 400;
+	line-height: em(20px, 15px);
+	padding: 85px 0 75px;
+	@media (max-width: $screen-sm-max) {
+		text-align: center;
+	}
+	a {
+		text-align: center;
+		color: $fontColorLight;
+	}
+	.row {
+		border: 1px solid #cdcdcd;
+		padding: 30px 0 25px;
+		.columns {
+			padding-left: 25px;
+		}
+	}
+	.footer_social {
+		padding-left: 30px;
+	}
+	.footer_title {
+		margin: 0 0 25px;
+		padding: 0;
+		font-size: em(16px, 15px);
+		font-weight: 400;
+		line-height: 23px;
+	}
+	.social_list {
+		display: flex;
+		align-items: center;
+		// text-align: center;
+		margin-bottom: 30px;
+		li {
+			flex-grow: 1;
+			padding-right: 5px;
+		}
+	}
+	.copyright {
+		margin: 0;
+		a {
+			color: $fontColorOrange;
+		}
+	}
+	.footer_menu {
+		.footer_menu_list {
+			li {
+				padding: 0 5px 0 0;
+				width: 50%;
+				float: left;
+				margin-bottom: 15px;
+				&:nth-of-type(2n) {
+					padding: 0 0 0 5px;
+				}
+			}
+		}
+	}
+	.footer_contacts {
+		p {
+			margin: 0;
+		}
+		.footer_contacts_phones {
+			margin-bottom: 30px;
+		}
+	}
+	.footer_subscribe {
+		.title {
+			@extend .footer_title;
+		}
+		.text {
+			font-family: "OpenSans_Italic";
+		}
+		input:not([type=submit]) {
+			width: 94%;
+			border: none;
+			background-color: $bgLightGray;
+			border-radius: 3px;
+			color: $fontColorNewsDark;
+			font-weight: 400;
+			text-align: center;
+			line-height: 1;
+			padding: 7px;
+		}
+		.submit {
+			@extend .btn;
+			@extend .btn-small;
+			margin-top: 10px;
+		}
+	}
+}
+// footer #END
+// portfolio
+.portfolio {
+	text-align: center;
+	padding-bottom: 100px;
+	.showMore {
+		font-size: em(36px);
+		padding: 17px 79px;
+	}
+	&_item {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		min-height: 411px;
+		&_img {
+			width: 100%;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+		}
+		&_name {
+			margin: 10px 0 0;
+			padding: 0;
+			color: #333;
+			font-family: "ReformaGrotesk_Bold";
+			letter-spacing: 2px;
+			font-size: em(37px);
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+	}
+}
+// portfolio #END
+// breadcrumbs
+.breadcrumbs {
+	padding: 17px 0 22px;
+	background: $bgGrey;
+	&_list {
+		margin: 0;
+	}
+	&_item {
+		float: left;
+	}
+	&_link {
+		color: $fontColorDarkGrey;
+		font-size: em(18px);
+		font-weight: 400;
+		line-height: 1;
+		padding-right: 5px;
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: $fontColorDarkGrey;
+		}
+	}
+}
+// breadcrumbs #END

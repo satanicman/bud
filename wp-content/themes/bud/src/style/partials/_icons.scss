@@ -1,0 +1,65 @@
+@import "sprite";
+
+.icon {
+	display: inline-block;
+}
+.callback-icon {
+	@include sprite($callback-icon);
+}
+.fb-icon {
+	@include sprite($fb-icon);
+}
+.in-icon {
+	@include sprite($in-icon);
+}
+.list-icon {
+	@include sprite($list-icon);
+}
+.mobile-icon {
+	@include sprite($mobile-icon);
+}
+.r-icon {
+	@include sprite($r-icon);
+}
+.tw-icon {
+	@include sprite($tw-icon);
+}
+.up-icon {
+	@include sprite($up-icon);
+}
+.v-icon {
+	@include sprite($v-icon);
+}
+.right-arrow-orange-icon {
+	@include sprite($right-arrow-orange-icon);
+}
+.right-arrow-white-icon {
+	@include sprite($right-arrow-white-icon);
+}
+.about_left_column_content:after {
+	@include sprite($chevron-orange-icon);
+}
+.block_quotes_content:before {
+	@include sprite($quotes-icon);
+}
+.fb-grey-icon {
+	@include sprite($fb-grey-icon);
+}
+.tw-grey-icon {
+	@include sprite($tw-grey-icon);
+}
+.in-grey-icon {
+	@include sprite($in-grey-icon);
+}
+.r-grey-icon {
+	@include sprite($r-grey-icon);
+}
+.d-grey-icon {
+	@include sprite($d-grey-icon);
+}
+.e-grey-icon {
+	@include sprite($e-grey-icon);
+}
+.date-icon {
+	@include sprite($date-icon);
+}

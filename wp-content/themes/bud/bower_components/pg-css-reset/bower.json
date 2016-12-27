@@ -1,0 +1,26 @@
+{
+  "name": "pg-css-reset",
+  "version": "2.0.2",
+  "description": "Custom css reset based on html5doctor implementation",
+  "main": "dist/pg-reset.min.css",
+  "keywords": [
+    "css",
+    "reset"
+  ],
+  "ignore" : [
+    ".gitignore",
+    "bower.json",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pawelgur/css-reset.git"
+  },
+  "authors": [
+    "Pavel Gurecki <pawelgur@gmail.com>"
+  ],
+  "license": "MIT"
+}

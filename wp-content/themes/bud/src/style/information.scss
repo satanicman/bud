@@ -1,0 +1,30 @@
+@import "partials/variables";
+@import "partials/mixins";
+.information {
+    padding: 55px 0 130px;
+    &_title {
+        color: $fontColorDark;
+        font-family: $fontBold;
+        font-size: em(36px);
+        font-weight: 700;
+        margin: 0 0 30px;
+        padding: 0;
+    }
+    &_img {
+        img {
+            max-width: 100%;
+            border: 2px solid $bdDarkOrange;
+        }
+    }
+    &_text {
+        color: $fontColorDark;
+        font-size: em(18px);
+        font-weight: 400;
+        line-height: em(30px, 18px);
+        margin: 60px 0;
+    }
+    .btn {
+        font-size: em(43px);
+        padding: 8px 49px;
+    }
+}

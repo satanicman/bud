@@ -1,0 +1,12 @@
+@import "mixins";
+
+@include fontFace('pfdintextpro-bold', 'PFDinTextPro_Bold');
+@include fontFace('pfdintextpro-regular', 'PFDinTextPro_Regular');
+@include fontFace('reformaGrotesk-bold', 'ReformaGrotesk_Bold');
+@include fontFace('OpenSansBold', 'OpenSans_Bold');
+@include fontFace('OpenSansExtraBold', 'OpenSans_ExtraBold');
+@include fontFace('OpenSansSemiBold', 'OpenSans_SemiBold');
+@include fontFace('OpenSansRegular', 'OpenSans_Regular');
+@include fontFace('OpenSansItalic', 'OpenSans_Italic');
+@include fontFace('NotoSansBold', 'NotoSans_Bold');
+@include fontFace('NotoSansRegular', 'NotoSans_Regular');
