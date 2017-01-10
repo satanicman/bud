@@ -63,3 +63,12 @@
 .date-icon {
 	@include sprite($date-icon);
 }
+.dvu-icon {
+	@include sprite($dvu-icon);
+}
+.odn-icon {
+	@include sprite($odn-icon);
+}
+.pl-icon {
+	@include sprite($pl-icon);
+}

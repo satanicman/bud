@@ -2,7 +2,7 @@
 function enqueue_styles()
 {
     wp_enqueue_style('whitesquare-style', get_stylesheet_uri());
-//    wp_enqueue_style('cbk', 'https://cdn.envybox.io/widget/cbk.css');
+    wp_enqueue_style('cbk', 'https://cdn.envybox.io/widget/cbk.css');
     if (is_single()) {
         wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/information.css');
     } elseif (is_page()) {
@@ -13,22 +13,20 @@ function enqueue_styles()
             case 101 :
                 wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/about.css');
                 break;
+            case 141 :
+                wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/form.css');
+                break;
             default:
                 wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/index.css');
                 break;
         }
-    } elseif (is_category() && $cat = get_the_category()) {
-        switch ($cat[0]->term_id) {
-            case 3 :
-                wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/portfolio.css');
-                break;
-            case 4 :
-                wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/news.css');
-                break;
-            default:
-                wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/news.css');
-                break;
-        }
+    } elseif (is_category()) {
+        if(is_category(3))
+            wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/portfolio.css');
+        elseif(is_category(4))
+            wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/news.css');
+        else
+            wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/news.css');
 
     } elseif(is_search()) {
         wp_enqueue_style('productioncss', get_template_directory_uri() . '/css/news.css');
@@ -46,7 +44,14 @@ function enqueue_scripts()
     wp_enqueue_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '', true);
     wp_enqueue_script('productionjs', get_template_directory_uri() . '/js/global.js', array(), '', true);
     wp_enqueue_script('callme', get_template_directory_uri() . '/callme/js/callme.min.js', array(), '', true);
-//    wp_enqueue_script('cbk', 'https://cdn.envybox.io/widget/cbk.js?wcb_code=798d4afea6f654eeeda090042b924f72', array(), '', true);
+    wp_enqueue_script('cbk', 'https://cdn.envybox.io/widget/cbk.js?wcb_code=798d4afea6f654eeeda090042b924f72', array(), '', true);
+    if (is_page()) {
+        switch (get_the_ID()) {
+            case 141 :
+                wp_enqueue_script('formJs', get_template_directory_uri() . '/js/form.js', array(), '', true);
+                break;
+        }
+    }
 }
 
 if (function_exists('enqueue_styles')) {
@@ -84,6 +89,67 @@ if (function_exists('load_style_script')) {
 }
 if (function_exists('register_nav_menus')) {
     add_action('init', 'register_my_menus');
+}
+
+add_action('wp_ajax_my_ajax_action', 'send_form_mail');
+
+function send_form_mail() {
+    if(!isset($_POST['data'])) {
+        die(json_encode(array('hasError' => 1, 'message' => 'Что-то пошло не так:(')));
+    }
+
+    $message = '<h1>Запрос быстрого расчета:</h1>';
+    $message .= '<table border="1" cellpadding="5" cellspacing="0"><tbody>';
+    foreach ($_POST['data'] as $field=> $value) {
+        $message .= '<tr>';
+        if(is_array($value)) {
+            $message .= '<td><strong>';
+            $message .= form_translate($_POST['data']['type']);
+            $message .= '</strong></td><td><table cellpadding="5"><tbody>';
+            foreach ($value as $type => $v) {
+                $message .= '<tr><td>'.form_translate($type).'</td><td>'.$v.'</td></tr>';
+            }
+            $message .= '</tbody></table></td>';
+        } elseif($field != 'type') {
+            $message .= '<td><strong>'.form_translate($field).'</strong></td><td>'.$value.'</td>';
+        }
+        $message .= '</tr>';
+    }
+    $message .= '</tbody></table>';
+
+    $to = get_option('admin_email');
+    $subject = 'Запрос быстрого расчета';
+    $headers = "Content-Type: text/html; charset=UTF-8\r\n";
+
+    mail($to, $subject, $message, $headers);
+    die(json_encode(array('hasError' => 0, 'message' => 'Запрос успешно отправлен. В ближайшее время с вами свяжется нашь менеджер. Благодарим за заявку.')));
+}
+
+function form_translate($name) {
+    $translate = array(
+        'length' => 'Длина(м)',
+        'width' => 'Ширина(м)',
+        'height' => 'Высота(м)',
+        'tol' => 'Стеновые панели толщина, мм',
+        'tolPan' => 'Кровельные панели толщина, мм',
+        'name' => 'Имя',
+        'phone' => 'Телефон',
+        'email' => 'E-mail',
+        'city' => 'Город строительства',
+        'aim' => 'Назначение',
+        'sqire' => 'Площадь(м<sup>2</sup>)',
+        'dvu' => 'Двускатная',
+        'odn' => 'Односкатная',
+        'pl' => 'Плоская',
+        'dach' => 'Крыша',
+        'wall' => 'Стены',
+        'brett' => 'Планки обрамления',
+    );
+
+    if(isset($translate[$name]))
+        return $translate[$name];
+
+    return $name;
 }
 
 /*

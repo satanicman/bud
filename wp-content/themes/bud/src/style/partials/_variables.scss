@@ -35,3 +35,14 @@ $dotsWidth: 17px;
 $dotsHeight: 17px;
 
 $mobile-width: $grid-float-breakpoint;
+
+%sub_title {
+    color: inherit;
+    font-family: $fontBold;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}

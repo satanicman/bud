@@ -37,17 +37,19 @@ var path = {
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/global.js',
+        js: 'src/js/*.js',
         style: ['src/style/*.scss', '!src/style/style.scss'],
-        img: ['src/img/**/*.*', '!src/img/icons/*.*'],
+        img: ['src/img/**/*.*', '!src/img/icons/*.*', '!src/img/form/*.*'],
         sprite: 'src/img/icons/**/*.*',
+        spriteForm: 'src/img/form/**/*.*',
     },
     watch: {
         html: 'src/**/*.html',
         js: 'src/js/**/*.js',
         style: ['src/style/*.scss', '!src/style/style.scss'],
-        img: ['src/img/**/*.*', '!src/img/icons/*.*'],
-        sprite: 'src/img/icons/**/*.*'
+        img: ['src/img/**/*.*', '!src/img/icons/*.*', '!src/img/form/*.*'],
+        sprite: 'src/img/icons/**/*.*',
+        spriteForm: 'src/img/form/**/*.*'
     },
     clean: './build'
 };
@@ -145,6 +147,33 @@ gulp.task('sprite:build', function() {
                 algorithm: 'binary-tree',
                 imgPath : 'img/sprite.png',
                 padding: 5,
+            }));
+
+    var imgStream = spriteData.img
+        .pipe(buffer())
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
+        .pipe(gulp.dest('src/img/')); // путь, куда сохраняем картинку
+    var cssStream = spriteData.css.pipe(gulp.dest('src/style/partials/')); // путь, куда сохраняем стили
+
+    return merge(imgStream, cssStream).pipe(notify("Sprite Done!"));
+});
+
+
+
+gulp.task('spriteForm:build', function() {
+    var spriteData =
+        gulp.src(path.src.spriteForm) // путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'spriteForm.png',
+                cssName: '_spriteForm.scss',
+                algorithm: 'binary-tree',
+                imgPath : '../img/spriteForm.png',
+                padding: 5
             }));
 
     var imgStream = spriteData.img

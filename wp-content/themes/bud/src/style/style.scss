@@ -31,6 +31,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "partials/icons";
 @import "partials/fonts";
 
+.row {
+	@media (max-width: $mobile-width) {
+		margin: 0;
+	}
+}
+hr {
+	border-color: $bdDark;
+}
+
 body {
 	font-family: $fontMain;
 	font-size: $fontSize;
@@ -55,6 +64,9 @@ a {
 	text-align: center;
 	margin: 65px 0 35px;
 	padding: 0;
+}
+.sub_title {
+	@extend %sub_title;
 }
 #scroller {
 	position: fixed;
@@ -119,28 +131,34 @@ a {
 		padding: 10px;
 	}
 }
-.form-control {
-	width: 100%;
-	height: 42px;
-	background-color: #f9fafb;
-	border: 1px solid #d4d8dc;
+.form {
+	&-control {
+		width: 100%;
+		height: 42px;
+		background-color: #f9fafb;
+		border: 1px solid #d4d8dc;
+	}
+	&-group {
+		margin-bottom: 25px;
+		&.required {
+			.label {
+				&:after {
+					content: '*';
+					color: $fontColorError;
+					display: inline-block;
+					padding-left: 5px;
+				}
+			}
+		}
+	}
+	&-error {
+		border: 1px solid red;
+		background-color: rgba(red, .3);
+	}
 }
 textarea.form-control {
 	height: 192px;
 	resize: none;
-}
-.form-group {
-	margin-bottom: 25px;
-	&.required {
-		.label {
-			&:after {
-				content: '*';
-				color: $fontColorError;
-				display: inline-block;
-				padding-left: 5px;
-			}
-		}
-	}
 }
 .label {
 	font-family: $fontBold;

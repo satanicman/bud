@@ -81,7 +81,7 @@
 <section class="request">
     <div class="container">
         <div class="row">
-            <button class="btn btn-default request_btn callme_viewform">Запросить быстрый расчет</button>
+            <a href="<?php echo get_page_link(141); ?>" class="btn btn-default request_btn">Запросить быстрый расчет</a>
             <p class="request_text">ТЕХНИЧЕСКОЕ ЗАДАНИЕ НА РАСЧЕТ СТОИМОСТИ ПОЛНОКОМПЛЕКТНОГО ЗДАНИЯ</p>
             <div class="request_label">
                 <i class="icon list-icon"></i>

@@ -5,10 +5,17 @@
             <?php if( have_posts() ) : ?>
             <nav class="menu_block">
                 <ul class="menu_block_list">
-                    <li class="menu_block_item"><a href="#" class="menu_block_link">Жилые</a></li>
-                    <li class="menu_block_item"><a href="#" class="menu_block_link">Общественные</a></li>
-                    <li class="menu_block_item"><a href="#" class="menu_block_link">Промышленные</a></li>
-                    <li class="menu_block_item"><a href="#" class="menu_block_link">Сельскохозяйственные</a></li>
+                    <?php
+                    if (count(get_categories('child_of=3')))
+                        if (is_category()) {
+                            $current_cat = get_query_var('cat');
+                            wp_list_categories('child_of=' . $current_cat . '&title_li=&show_count=0');
+                        }
+                    ?>
+<!--                    <li class="menu_block_item"><a href="#" class="menu_block_link">Жилые</a></li>-->
+<!--                    <li class="menu_block_item"><a href="#" class="menu_block_link">Общественные</a></li>-->
+<!--                    <li class="menu_block_item"><a href="#" class="menu_block_link">Промышленные</a></li>-->
+<!--                    <li class="menu_block_item"><a href="#" class="menu_block_link">Сельскохозяйственные</a></li>-->
                 </ul>
             </nav>
             <ul class="portfolio_list clearfix">
