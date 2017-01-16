@@ -40,5 +40,6 @@
 </footer>
 <a href="#" id="scroller"><i class="icon up-icon"></i></a>
 <?php wp_footer(); ?>
+</div> <!-- #page -->
 </body>
 </html>
