@@ -100,3 +100,4 @@ wp-content/themes/*
 node_modules/
 
 get_exchange_rates.php
+wp-content/themes/bud/gulpfile.js

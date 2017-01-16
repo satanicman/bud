@@ -16,8 +16,7 @@
                     <a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.jpg" alt="" id="header_logo"></a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 col-lg-offset-2 backColl">
-                    <i class="mobile-icon icon"></i>
-                    <a href="#" class="btn btn-default callme_viewform">Обратный звонок</a>
+                    <i class="mobile-icon icon"></i><a href="#" class="btn btn-default callme_viewform">Обратный звонок</a>
                 </div>
                 <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 header_phones">
                     <table class="header_phones_table">
