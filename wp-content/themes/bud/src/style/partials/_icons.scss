@@ -72,3 +72,9 @@
 .pl-icon {
 	@include sprite($pl-icon);
 }
+.phone-icon {
+	@include sprite($phone-icon);
+}
+.kievstar-icon {
+	@include sprite($kievstar-icon);
+}

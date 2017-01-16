@@ -5,23 +5,47 @@
     </div>
 </div>
 <section class="under_slider clearfix">
-    <?php
-    global $post;
-    $postslist = get_posts( array( 'posts_per_page' => 4, 'orderby' => 'date') );
-    foreach ( $postslist as $post ) : ?>
-        <article class="col-lg-3 col-md-3 col-sm-12 col-xs-12 under_slider_article">
-            <div class="under_slider_article_content">
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                    <?php if(get_the_post_thumbnail_url()) : ?>
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="under_slider_article_img">
-                    <?php endif; ?>
-                    <div class="under_slider_article_text">
-                        <h2 class="under_slider_article_title"><?php the_title(); ?></h2>
-                    </div>
-                </a>
-            </div>
-        </article>
-    <?php endforeach; ?>
+
+    <article class="col-lg-3 col-md-3 col-sm-12 under_slider_article">
+        <div class="under_slider_article_content">
+            <a href="<?php echo get_category_link(10); ?>" title="Коммерческие здания">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/articles/article-1.jpg" alt="article" class="under_slider_article_img">
+                <div class="under_slider_article_text">
+                    <h2 class="under_slider_article_title">Коммерческие <br/>здания</h2>
+                </div>
+            </a>
+        </div>
+    </article>
+    <article class="col-lg-3 col-md-3 col-sm-12 under_slider_article">
+        <div class="under_slider_article_content">
+            <a href="<?php echo get_category_link(9); ?>" title="Промышленные здания">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/articles/article-2.jpg" alt="article" class="under_slider_article_img">
+                <div class="under_slider_article_text">
+                    <h2 class="under_slider_article_title">Промышленные <br/>здания</h2>
+                </div>
+            </a>
+        </div>
+    </article>
+    <article class="col-lg-3 col-md-3 col-sm-12 under_slider_article">
+        <div class="under_slider_article_content">
+            <a href="<?php echo get_category_link(11); ?>" title="Жилые здания">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/articles/article-3.jpg" alt="article" class="under_slider_article_img">
+                <div class="under_slider_article_text">
+                    <h2 class="under_slider_article_title">Жилые <br/>здания</h2>
+                </div>
+            </a>
+        </div>
+    </article>
+    <article class="col-lg-3 col-md-3 col-sm-12 under_slider_article">
+        <div class="under_slider_article_content">
+            <a href="<?php echo get_category_link(8); ?>" title="Сельскохозяйственные здания">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/articles/article-4.jpg" alt="article" class="under_slider_article_img">
+                <div class="under_slider_article_text">
+                    <h2 class="under_slider_article_title">Сельскохозяйственные <br/>здания</h2>
+                </div>
+            </a>
+        </div>
+    </article>
 </section>
 <section class="portfolio">
     <div class="container">

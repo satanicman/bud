@@ -186,21 +186,38 @@ textarea.form-control {
 	}
 }
 .header_phones {
-	padding-left: 35px;
+    padding-right: 10px;
+	color: $fontColorDark;
+	font-size: em(18px);
+	font-weight: 400;
+	line-height: 1;
 	&_table {
 		max-width: 100%;
 		@media (max-width: $screen-md - 1) {
 			margin: 0 auto;
 		}
+        td {
+            padding-right: 5px;
+            padding-bottom: 5px;
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+        tr:last-of-type td {
+            padding-bottom: 0;
+        }
 	}
-	color: $fontColorDark;
-	font-size: em(18px);
-	font-weight: 400;
-	line-height: em(21px, 18px);
 	.bold {
 		font-family: $fontExtraBold;
-		padding-right: 20px;
 		text-align: right;
+	}
+	.icon {
+		vertical-align: top;
+		margin-right: 2px;
+	}
+	span {
+		display: inline-block;
+		vertical-align: middle;
 	}
 }
 #header  {

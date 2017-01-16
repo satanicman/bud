@@ -21,6 +21,7 @@
                             </div>
                         </li>
                     <?php } ?>
+                    <?php wp_paginate(); ?>
                 </ul>
                 <?php else : ?>
                     <p>Пока нет новостей</p>

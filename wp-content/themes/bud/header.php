@@ -23,11 +23,21 @@
                     <table class="header_phones_table">
                         <tr>
                             <td class="bold">Киев</td>
-                            <td>067-793-08-08, 044-232-36-46</td>
+                            <td>
+                                <i class="icon kievstar-icon"></i>067-793-08-08
+                            </td>
+                            <td>
+                                <i class="icon phone-icon"></i>044-232-36-46
+                            </td>
                         </tr>
                         <tr>
                             <td class="bold">Днепр</td>
-                            <td>067-739-66-05 , 056-786-11-77</td>
+                            <td>
+                                <i class="icon kievstar-icon"></i>067-739-66-05
+                            </td>
+                            <td>
+                                <i class="icon phone-icon"></i>056-786-11-77
+                            </td>
                         </tr>
                     </table>
                 </div>
