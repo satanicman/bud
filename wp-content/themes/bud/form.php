@@ -8,56 +8,7 @@ Template Name: form
     <div class="container">
         <div class="row">
             <h1 class="main_title">Запросить быстрый расчет:</h1>
-            <p class="form_subtitle">Примерный размер здания:</p>
             <form action="#" class="form-form" id="formForm">
-                <div class="form-fields size">
-                    <div class="form-group">
-                        <label for="length" class="label">Длина(м)</label><input type="text" name="length" id="length"
-                                                                                 class="form-control required"
-                                                                                 data-validate="isInt" required
-                                                                                 pattern="^[0-9]*$">
-                    </div>
-                    <div class="form-group">
-                        <label for="width" class="label">Ширина(м)</label><input type="text" name="width" id="width"
-                                                                                 class="form-control required"
-                                                                                 data-validate="isInt" required
-                                                                                 pattern="^[0-9]*$">
-                    </div>
-                    <div class="form-group">
-                        <label for="height" class="label">Высота(м)</label><input type="text" name="height" id="height"
-                                                                                  class="form-control required"
-                                                                                  data-validate="isInt" required
-                                                                                  pattern="^[0-9]*$">
-                    </div>
-                    <div class="form-group square-wrap">
-                        <label class="label">Площадь</label>
-                        <div class="group">
-                            <div class="square">0</div>
-                            <label class="label">m<sup>2</sup></label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="tol" class="label">Стеновые панели толщина, мм</label>
-                        <select name="tol" id="tol" class="form-control">
-                            <option value="40" selected="selected">40</option>
-                            <option value="60">60</option>
-                            <option value="80">80</option>
-                            <option value="100">100</option>
-                            <option value="120">120</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="tolPan" class="label">Кровельные панели толщина, мм</label>
-                        <select name="tolPan" id="tolPan" class="form-control">
-                            <option value="40" selected="selected">40</option>
-                            <option value="60">60</option>
-                            <option value="80">80</option>
-                            <option value="100">100</option>
-                        </select>
-                    </div>
-                </div>
-                <hr>
                 <p class="form_subtitle">Данные для заказа:</p>
                 <div class="form-fields order">
                     <div class="form-group">
@@ -88,6 +39,53 @@ Template Name: form
                     <div class="alert"></div>
                     <button class="btn-default btn" id="sendForm">Отправить</button>
                 </div>
+                <p class="form_subtitle">Примерный размер здания:</p>
+                <div class="form-fields size">
+                    <div class="form-group">
+                        <label for="length" class="label">Длина(м)</label><input type="text" name="length" id="length"
+                                                                                 class="form-control required"
+                                                                                 data-validate="isInt" required
+                                                                                 pattern="^[0-9]*$">
+                    </div>
+                    <div class="form-group">
+                        <label for="width" class="label">Ширина(м)</label><input type="text" name="width" id="width"
+                                                                                 class="form-control required"
+                                                                                 data-validate="isInt" required
+                                                                                 pattern="^[0-9]*$">
+                    </div>
+                    <div class="form-group">
+                        <label for="height" class="label">Высота(м)</label><input type="text" name="height" id="height"
+                                                                                  class="form-control required"
+                                                                                  data-validate="isInt" required
+                                                                                  pattern="^[0-9]*$">
+                    </div>
+                    <div class="form-group square-wrap">
+                        <label class="label">Площадь</label>
+                        <div class="group">
+                            <div class="square">0</div>
+                            <label class="label">m<sup>2</sup></label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="tol" class="label">Стеновые панели толщина, мм</label>
+                        <select name="tol" id="tol" class="form-control">
+                            <option value="80" selected="selected">80</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tolPan" class="label">Кровельные панели толщина, мм</label>
+                        <select name="tolPan" id="tolPan" class="form-control">
+                            <option value="100" selected="selected">100</option>
+                            <option value="200">200</option>
+                            <option value="250">250</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
                 <div class="form-tabs">
                     <ul class="nav nav-tabs top">
                         <li><a data-toggle="tab" href="#dvu" class="dvu"><i
@@ -107,7 +105,7 @@ Template Name: form
                             </ul>
                             <div class="tab-content col-lg-9 col-md-9 col-sm-12">
                                 <div id="dvu-dach" class="tab-pane active dach">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[dvu][dach]" value="RAL1003"
                                                    id="dvu-dach-color1" class="colors-input">
@@ -263,7 +261,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="dvu-wall" class="tab-pane wall">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[dvu][wall]" value="RAL1003"
                                                    id="dvu-wall-color1" class="colors-input">
@@ -419,7 +417,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="dvu-brett" class="tab-pane brett">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[dvu][brett]" value="RAL1003"
                                                    id="dvu-brett-color1" class="colors-input">
@@ -584,7 +582,7 @@ Template Name: form
                             </ul>
                             <div class="tab-content col-lg-9 col-md-9 col-sm-12">
                                 <div id="odn-dach" class="tab-pane active dach">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[odn][dach]" value="RAL1003"
                                                    id="odn-dach-color1" class="colors-input">
@@ -740,7 +738,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="odn-wall" class="tab-pane wall">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[odn][wall]" value="RAL1003"
                                                    id="odn-wall-color1" class="colors-input">
@@ -896,7 +894,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="odn-brett" class="tab-pane brett">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[odn][brett]" value="RAL1003"
                                                    id="odn-brett-color1" class="colors-input">
@@ -1061,7 +1059,7 @@ Template Name: form
                             </ul>
                             <div class="tab-content col-lg-9 col-md-9 col-sm-12">
                                 <div id="pl-dach" class="tab-pane active dach">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[pl][dach]" value="RAL1003"
                                                    id="pl-dach-color1" class="colors-input">
@@ -1217,7 +1215,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="pl-wall" class="tab-pane wall">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[pl][wall]" value="RAL1003"
                                                    id="pl-wall-color1" class="colors-input">
@@ -1373,7 +1371,7 @@ Template Name: form
                                     </ul>
                                 </div>
                                 <div id="pl-brett" class="tab-pane brett">
-                                    <ul class="colors">
+                                    <ul class="colors clearfix">
                                         <li class="colors-item">
                                             <input type="radio" name="colors[pl][brett]" value="RAL1003"
                                                    id="pl-brett-color1" class="colors-input">

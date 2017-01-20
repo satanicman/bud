@@ -3,6 +3,11 @@
 @import "partials/iconsForm";
 
 .form {
+    &-form {
+        hr {
+            margin: 10px 0;
+        }
+    }
     .alert {
         display: none;
     }
@@ -48,10 +53,13 @@
         padding: 20px 0;
         text-align: center;
         &.size {
+            padding: 10px 0 0;
+            margin-bottom: -5px;
             .form-group {
                 display: inline-block;
                 vertical-align: middle;
                 padding-right: 15px;
+                margin-bottom: 5px;
                 @media (max-width: $screen-md-min) {
                     display: block;
                     padding: 0;
@@ -90,14 +98,14 @@
             display: none;
         }
         .form_subtitle {
-            margin: 20px 0;
+            margin: 10px 0;
         }
         .nav-tabs {
             border: none;
             text-align: center;
             li {
                 float: none;
-                margin: 0 0 10px 0;
+                margin: 0 0 5px 0;
                 &.active {
                     a {
                         border-color: transparent;
@@ -110,14 +118,14 @@
                     &:after {
                         content: '';
                         display: block;
-                        border-width: 15px 10px;
+                        border-width: 10px;
                         border-style: solid;
                         border-color: transparent;
                         border-left-color: $bgOrange;
                         position: absolute;
                         left: 100%;
                         top: 50%;
-                        margin-top: -15px;
+                        margin-top: -10px;
                     }
                 }
             }
@@ -128,7 +136,7 @@
                 border-radius: 4px;
                 margin: 0;
                 line-height: 1;
-                padding: 20px;
+                padding: 10px;
                 &:hover {
                     border: 1px solid $bdDarkGrey;
                 }
@@ -160,8 +168,8 @@
                     }
                 }
                 a {
-                    height: 75px;
-                    padding: 10px 15px;
+                    height: 50px;
+                    padding: 5px 15px;
                     overflow: hidden;
                     display: -webkit-flex;
                     display: -webkit-box;
@@ -191,9 +199,9 @@
 .colors {
     margin: -10px;
     &-item {
-        width: 10%;
+        width: 8.3333%;
         float: left;
-        padding: 10px;
+        padding: 3px;
     }
     &-input {
         display: none;
@@ -212,7 +220,7 @@
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
-        padding: 5px;
+        padding: 2px;
         margin: 0;
         border: 1px solid transparent;
         -webkit-transition: all .3s;
@@ -238,7 +246,10 @@
 }
 
 .image {
-    &-wrap {}
+    &-wrap {
+        transform: scale(0.8);
+        margin-top: -70px;
+    }
     &-size {
         display: block;
         margin: 40px auto;
