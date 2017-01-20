@@ -50,7 +50,7 @@
 <section class="portfolio">
     <div class="container">
         <div class="row">
-            <h1 class="main_title">Портфолио</h1>
+            <h1 class="main_title main_title_blue">Портфолио</h1>
             <ul class="portfolio_list clearfix">
                 <?php $recent = new WP_Query("cat=3&showposts=6"); while($recent->have_posts()) : $recent->the_post();?>
                     <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 portfolio_item">

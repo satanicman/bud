@@ -81,6 +81,9 @@ a {
 	text-align: center;
 	margin: 65px 0 35px;
 	padding: 0;
+	&_blue {
+		color: #607CBD;
+	}
 }
 .sub_title {
 	@extend %sub_title;

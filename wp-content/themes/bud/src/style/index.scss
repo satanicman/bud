@@ -157,6 +157,9 @@
 		&.white {}
 		&.news_link {
 			position: relative;
+			img {
+				opacity: .8;
+			}
 			.news_item_content {
 				background: none;
 			}
