@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="top_slider">
     <div id="slick-wrap">
-        <?php echo do_shortcode('[slick-slider category="6" dots="true" arrows="false" autoplay="false" sliderheight="auto"]'); ?>
+        <?php echo do_shortcode('[slick-slider category="6" dots="true" arrows="false" autoplay="true" sliderheight="auto"]'); ?>
     </div>
 </div>
 <section class="under_slider clearfix">

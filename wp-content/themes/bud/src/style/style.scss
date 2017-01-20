@@ -264,6 +264,14 @@ textarea.form-control {
 // horisontal_menu
 .horisontal_menu {
 	background-color: $bgOrange;
+	&.fixed {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 2;
+	}
 	&:after {
 		content: '';
 		position: absolute;
@@ -316,7 +324,7 @@ textarea.form-control {
 			}
 			&.current-menu-item,
 			&:hover {
-				background-color: rgba($bdDark, .5);
+				background-color: rgba(171,171,171,.5);
 			}
 		}
 		a {
